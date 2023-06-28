@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getdetailes } from '../redux/detailes/action'
+import { deletedetailes, getdetailes } from '../redux/detailes/action'
 
 export const Detailes = () => {
     //  axios.get("http://5.189.180.8:8010/detail").then(e=>console.log(e))
@@ -35,7 +35,7 @@ export const Detailes = () => {
         <td>{e.qty}</td>
         <td>{e.rate}</td>
         <td>{e.qty*e.rate}</td>
-        <button>Delete</button>
+        <button onClick={()=>deletedetailes(e.qty)}>Delete</button>
     </tr>
     ))
         }

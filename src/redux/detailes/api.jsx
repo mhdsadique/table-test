@@ -18,4 +18,14 @@ export const Dataapipost=async(detailes)=>{
         console.log(e)
     }
     }
+    export const Dataapidelete=async(id)=>{
+
+        try{
+                let daa= axios.delete(`http://5.189.180.8:8010/detail/${id}`)
+                return daa
+        //    let daa= axios.post("http://localhost:8000/posts",detailes)
+        }catch(e){
+            console.log(e)
+        }
+        }
   

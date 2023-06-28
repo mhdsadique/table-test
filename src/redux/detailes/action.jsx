@@ -1,5 +1,5 @@
-import { Dataapi, Dataapipost } from "./api"
-import { DETAILE_GET, DETAILE_POST } from "./types"
+import { Dataapi, Dataapidelete, Dataapipost } from "./api"
+import { DETAILE_DELETE, DETAILE_GET, DETAILE_POST } from "./types"
 
 
 export const getdetailes=(dispatch)=>{
@@ -18,4 +18,12 @@ export const postdetailes=(detailes)=>async(dispatch)=>{
 
         console.log(da)
     }
+    }
+    export const deletedetailes=async(id,dispatch)=>{
+   try{
+   let data=await Dataapidelete(id)
+  dispatch({type:DETAILE_DELETE,payload:data})
+   }catch(e){
+    console.log(e)
+   }
     }

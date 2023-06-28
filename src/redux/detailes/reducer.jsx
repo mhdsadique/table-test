@@ -1,4 +1,4 @@
-import { DETAILE_GET, DETAILE_POST,  } from "./types"
+import { DETAILE_DELETE, DETAILE_GET, DETAILE_POST,  } from "./types"
 
 
 const inisdata={
@@ -14,6 +14,12 @@ export const detailereducer=(state=inisdata,{type,payload})=>{
             }
         }
         case DETAILE_POST:{
+            return{
+                ...state,
+            }
+
+        }
+        case DETAILE_DELETE:{
             return{
                 ...state,
             }
