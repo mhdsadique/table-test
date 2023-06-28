@@ -4,62 +4,42 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getdetailes } from '../redux/detailes/action'
 
 export const Detailes = () => {
- 
     //  axios.get("http://5.189.180.8:8010/detail").then(e=>console.log(e))
-    // const [dat,setdata]=useState([])
     const {datas}=useSelector((store)=>store.detailes)
     const dispatch=useDispatch()
     useEffect(()=>{
        getdetailes(dispatch)
     },[])
     console.log(datas)
+    let sum=0
+    datas.map((e,i)=>(<div key={i}>{sum+=e.qty*e.rate}</div>))
   return (
     <div>
+        <h4>detail_table</h4>  
           <table border={"1"}  >
-        <tr>
-
-        <td>detail_table</td>  
+           <tr>
+           <th >sr_no</th>
+           <th  >item_code</th>
+           <th>item_name</th>
+          
+           <th>qty</th>
+           <th>rate</th>
+           <th>amount</th>
+           </tr>
         {
-            datas.map((e,i)=>(
-                <div key={i}>
-    <tr >
-        <th >vr_no</th>
-        <td>{e.vr_no}</td>
-    </tr>
-    <tr >
-        <th >sr_no</th>
+            datas.map((e,i)=>( <tr key={i}>
         <td>{e.sr_no}</td>
-    </tr>
-    <tr>
-        <th  >item_code</th>
-
         <td>{e.item_code}</td>
-    </tr>
-    <tr>
-        <th>item_name</th>
-
-        <td>{e.item_name}</td>
-    </tr>
-    <tr>
-        <th>description</th>
-        <td>{e.description}</td>
-    </tr>
-    <tr>
-        <th>qty</th>
-
+        <td>{e.item_name}</td>     
+     
         <td>{e.qty}</td>
-    </tr>
-    <tr>
-        <th>rate</th>
         <td>{e.rate}</td>
+        <td>{e.qty*e.rate}</td>
+        <button>Delete</button>
     </tr>
-
-    
-    </div> 
-     ))
+    ))
         }
-    
-     </tr>
+  <tr ><td colSpan="6" style={{textAlign:"end"}}>Total:- {sum} </td></tr>
     </table>
     </div>
   )
