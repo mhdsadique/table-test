@@ -19,6 +19,8 @@ export const postdetailes=(detailes)=>async(dispatch)=>{
         console.log(da)
     }
     }
+
+    
     export const deletedetailes=async(id,dispatch)=>{
    try{
    let data=await Dataapidelete(id)

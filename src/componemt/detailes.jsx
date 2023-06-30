@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { deletedetailes, getdetailes } from '../redux/detailes/action'
 
 export const Detailes = () => {
-    //  axios.get("http://5.189.180.8:8010/detail").then(e=>console.log(e))
     const {datas}=useSelector((store)=>store.detailes)
     const dispatch=useDispatch()
     useEffect(()=>{

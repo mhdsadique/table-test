@@ -5,7 +5,6 @@ import { getdatas, postheader } from '../redux/header/action'
 import { postdetailes } from '../redux/detailes/action'
 
 export const Header = () => {
-    //  axios.get("http://5.189.180.8:8010/header").then(e=>console.log(e))
     const dispatch=useDispatch()
      const [ac_amt,setac_amt]=useState("")
      const [vr_no,setvr_no]=useState("")
@@ -36,7 +35,7 @@ export const Header = () => {
           const formsubmit=(event)=>{
              event.preventDefault()
       
-            //  dispatch(postdetailes(detailes))
+             dispatch(postdetailes(detailes))
              postheader(dispatch,header)
              console.log(header)
           }
