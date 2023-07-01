@@ -20,7 +20,6 @@ export const Detailes = () => {
            <th >sr_no</th>
            <th  >item_code</th>
            <th>item_name</th>
-          
            <th>qty</th>
            <th>rate</th>
            <th>amount</th>
@@ -30,7 +29,6 @@ export const Detailes = () => {
         <td>{e.sr_no}</td>
         <td>{e.item_code}</td>
         <td>{e.item_name}</td>     
-     
         <td>{e.qty}</td>
         <td>{e.rate}</td>
         <td>{e.qty*e.rate}</td>

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getdatas, postheader } from '../redux/header/action'
+import {  postheader } from '../redux/header/action'
 import { postdetailes } from '../redux/detailes/action'
 
 export const Header = () => {
@@ -32,14 +32,17 @@ export const Header = () => {
           ac_amt:ac_amt,
           status:status
        }
-          const formsubmit=(event)=>{
-             event.preventDefault()
-      
-             dispatch(postdetailes(detailes))
-             postheader(dispatch,header)
-             console.log(header)
-          }
-    console.log(datas)
+       
+       const formsubmit=(event)=>{
+                   event.preventDefault()
+
+                dispatch(postdetailes(detailes))
+                postheader(dispatch,header)
+                console.log(header)
+                console.log(detailes)
+         
+                console.log(datas)
+             }
     const styles={
        display:"grid",
        gridTemplateColumns:"repeat(3,1fr)"
