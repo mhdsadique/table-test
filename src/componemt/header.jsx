@@ -16,6 +16,7 @@ export const Header = () => {
      const [rate,setrate]=useState("")
      const [status,setstatus]=useState("")
     const {datas}=useSelector((store)=>store.header)
+ 
     const detailes={
         vr_no:vr_no,
         sr_no:sr_no,
@@ -32,24 +33,25 @@ export const Header = () => {
           ac_amt:ac_amt,
           status:status
        }
-       
        const formsubmit=(event)=>{
                    event.preventDefault()
-
                 dispatch(postdetailes(detailes))
                 postheader(dispatch,header)
                 console.log(header)
                 console.log(detailes)
-         
                 console.log(datas)
              }
     const styles={
        display:"grid",
        gridTemplateColumns:"repeat(3,1fr)"
     }
+    const printer=()=>{
+     window.print()
+   }
   return (
     <>
     <h3>Header</h3>
+    <button onClick={printer}>Print</button>
    <form action="" onSubmit={formsubmit}>
    <div style={styles}>
    <div >

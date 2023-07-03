@@ -11,14 +11,13 @@ Dataapi().then(e=>dispatch({type:DETAILE_GET,payload:e},console.log(e)))
 export const postdetailes=(detailes)=>async(dispatch)=>{
     try{
         let dat=await  Dataapipost(detailes)
-        dispatch({type:DETAILE_POST,payload:dat.data})
+        dispatch({type:DETAILE_POST,payload:dat})
           console.log(dat)
     }catch(da){
 
         console.log(da)
     }
     }
-
 
     export const deletedetailes=async(id,dispatch)=>{
    try{
@@ -28,3 +27,4 @@ export const postdetailes=(detailes)=>async(dispatch)=>{
     console.log(e)
    }
     }
+
